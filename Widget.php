@@ -58,9 +58,14 @@ class Widget extends InputWidget
         $options = Json::encode($this->clientOptions);
 
         $id = $this->options['id'];
+        $rows = isset($this->options['rows'])?'true':'false';
+        $cols = isset($this->options['cols'])?'true':'false';
         $this->view->registerJs(
 <<<JS
+var w = {$cols} ? $('#{$id}').width() : 'auto';
+var h = {$rows} ? $('#{$id}').height() : 'auto';
 var e = CodeMirror.fromTextArea(document.getElementById("{$id}"), $options);
+e.setSize(w, h);
 JS
         );
 
