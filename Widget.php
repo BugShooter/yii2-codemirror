@@ -18,7 +18,7 @@ use yii\helpers\Json;
  * ```php
  * <?= $form->field($model, 'text')->widget(\yiiBoy\CodeMirror\Widget::className(), [
  *      // configure additional widget properties here
- *      'codeMirrorOptions' => [
+ *      'clientOptions' => [
  *          'lineNumbers' => true,
  *          'mode' => 'htmlmixed',
  *      ]
